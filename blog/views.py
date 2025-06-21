@@ -4,6 +4,7 @@ from .models import Post
 
 class PostList(ListView):
     model = Post
+    ordering = '-pk'
 
 # Create your views here.
 #def index(request):
@@ -11,7 +12,7 @@ class PostList(ListView):
 #
 #    return render(
 #        request,
-#        'blog/index.html',
+#        'blog/post_list.html',
 #        {
 #            'posts': posts,
 #        }
