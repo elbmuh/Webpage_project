@@ -76,7 +76,9 @@
 
         <div class="container my-3">
             <div class="row">
-                <div class="col-md-8 col-lg-9">
+
+                <div class="col-md-8 col-lg-9" id="main-area">
+                {% if post_list.exists %}
                     <h1>Blog</h1>
 
                     {% for p in post_list %}
@@ -89,6 +91,7 @@
                         {% else %}
                             <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
                         {% endif %}
+
                         <div class="card-body">
                             <h2 class="card-title">{{ p.title }}</h2>
 
@@ -105,6 +108,9 @@
                         </div>
                     </div>
                     {% endfor %}
+                {% else %}
+                    <h3>아직 게시물이 없습니다.</h3>
+                {% endif %}
 
                     <!-- Pagination-->
                     <nav aria-label="Pagination">
@@ -119,7 +125,6 @@
                             <li class="page-item"><a class="page-link" href="#!">Older</a></li>
                         </ul>
                     </nav>
-
                 </div>
 
                 <div class="col-md-4 col-lg-3">
