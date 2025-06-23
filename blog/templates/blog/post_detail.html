@@ -1,5 +1,4 @@
 {% extends 'blog/base.html' %}
-
 {% block head_title %}
     {{ post.title }} - Blog
 {% endblock %}
@@ -8,9 +7,9 @@
     <!-- Post content-->
     <div id="post-area">
         {% if post.category %}
-            <span class="badge badge-secondary float-right">{{ post.category }}</span>
+            <span class="badge rounded-pill text-bg-secondary float-end">{{ post.category }}</span>
         {% else %}
-            <span class="badge badge-secondary float-right">미분류</span>
+            <span class="badge rounded-pill text-bg-secondary float-end">미분류</span>
         {% endif %}
         <!-- Post header-->
         <header class="mb-4">
@@ -22,7 +21,7 @@
             <!-- Author -->
             <p class="lead">
                 by
-                <a href="#">{{ post.author | upper }}</a>
+                <a href="#!">{{ post.author | upper }}</a>
             </p>
 
             <hr>
